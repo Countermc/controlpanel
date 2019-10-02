@@ -32,3 +32,6 @@ def automatizacion(request):
 
 def tareas(request):
     return render(request, 'informatica/tareas.html', {'title': 'tareas'})
+
+def calendario(request):
+    return render(request, 'informatica/calendario.html', {'title': 'calendario'})

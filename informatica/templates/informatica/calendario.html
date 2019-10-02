@@ -1,0 +1,101 @@
+{% extends "informatica/base.html" %}
+{% block content %}
+<section id="main-content">
+    <section class="wrapper">
+      <h3><i class="fa fa-angle-right"></i> Calendar</h3>
+      <!-- page start-->
+      <div class="row mt">
+        <aside class="col-lg-3 mt">
+          <h4><i class="fa fa-angle-right"></i> Draggable Events</h4>
+          <div id="external-events">
+            <div class="external-event label label-theme">My Event 1</div>
+            <div class="external-event label label-success">My Event 2</div>
+            <div class="external-event label label-info">My Event 3</div>
+            <div class="external-event label label-warning">My Event 4</div>
+            <div class="external-event label label-danger">My Event 5</div>
+            <div class="external-event label label-default">My Event 6</div>
+            <div class="external-event label label-theme">My Event 7</div>
+            <div class="external-event label label-info">My Event 8</div>
+            <div class="external-event label label-success">My Event 9</div>
+            <p class="drop-after">
+              <input type="checkbox" id="drop-remove"> Remove After Drop
+            </p>
+          </div>
+        </aside>
+        <aside class="col-lg-9 mt">
+          <section class="panel">
+            <div class="panel-body">
+              <div id="calendar" class="has-toolbar"></div>
+            </div>
+          </section>
+        </aside>
+      </div>
+      <!-- page end-->
+    </section>
+    <!-- /wrapper -->
+  </section>
+  <script src="informatica/lib/fullcalendar/fullcalendar.min.js"></script>
+  <script src="informatica/lib/calendar-conf-events.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var unique_id = $.gritter.add({
+        // (string | mandatory) the heading of the notification
+        title: 'Bienvenido a Cabañero!',
+        // (string | mandatory) the text inside the notification
+        text: 'Aquí podras encontrar todo lo relaccionado con tu dia a dia. Pulsa la X para cerrar esta ventana.',
+        // (string | optional) the image to display on the left
+        image: 'static/informatica/img/ui-sam.jpg',
+        // (bool | optional) if you want it to fade out on its own or just sit there
+        sticky: false,
+        // (int | optional) the time you want it to be alive for before fading out
+        time: 8000,
+        // (string | optional) the class name you want to apply to that specific message
+        class_name: 'my-sticky-class'
+      });
+
+      return false;
+    });
+  </script>
+  <script type="application/javascript">
+    $(document).ready(function() {
+      $("#date-popover").popover({
+        html: true,
+        trigger: "manual"
+      });
+      $("#date-popover").hide();
+      $("#date-popover").click(function(e) {
+        $(this).hide();
+      });
+
+      $("#my-calendar").zabuto_calendar({
+        action: function() {
+          return myDateFunction(this.id, false);
+        },
+        action_nav: function() {
+          return myNavFunction(this.id);
+        },
+        ajax: {
+          url: "show_data.php?action=1",
+          modal: true
+        },
+        legend: [{
+            type: "text",
+            label: "Special event",
+            badge: "00"
+          },
+          {
+            type: "block",
+            label: "Regular event",
+          }
+        ]
+      });
+    });
+
+    function myNavFunction(id) {
+      $("#date-popover").hide();
+      var nav = $("#" + id).data("navigation");
+      var to = $("#" + id).data("to");
+      console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+    }
+  </script>
+{% endblock content%}
