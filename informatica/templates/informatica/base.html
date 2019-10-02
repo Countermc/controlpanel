@@ -24,8 +24,7 @@
   <link href="{% static 'informatica/css/style-responsive.css' %}" rel="stylesheet">
   <script src="{% static 'informatica/lib/chart-master/Chart.js' %}"></script>
 </head>
-<body>
-    
+<body>    
   <section id="container">
     <!-- **********************************************************************************************************************************************************
         TOP BAR CONTENT & NOTIFICATIONS
@@ -123,7 +122,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="static/informatica/img/ui-zac.jpg"></span>
+                  <span class="photo"><img alt="avatar" src="{% static 'informatica/img/ui-zac.jpg' %}"></span>
                   <span class="subject">
                   <span class="from">Zac Snider</span>
                   <span class="time">ahora mismo</span>
@@ -135,7 +134,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="static/informatica/img/ui-divya.jpg"></span>
+                  <span class="photo"><img alt="avatar" src="{% static 'informatica/img/ui-divya.jpg' %}"></span>
                   <span class="subject">
                   <span class="from">Rosda Forriol</span>
                   <span class="time">40 mins.</span>
@@ -147,7 +146,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="static/informatica/img/ui-danro.jpg"></span>
+                  <span class="photo"><img alt="avatar" src="{% static 'informatica/img/ui-danro.jpg' %}"></span>
                   <span class="subject">
                   <span class="from">Juan Moreno</span>
                   <span class="time">2 hrs.</span>
@@ -159,7 +158,7 @@
               </li>
               <li>
                 <a href="index.html#">
-                  <span class="photo"><img alt="avatar" src="static/informatica/img/ui-sherman.jpg"></span>
+                  <span class="photo"><img alt="avatar" src="{% static 'informatica/img/ui-sherman.jpg' %}"></span>
                   <span class="subject">
                   <span class="from">Alberto López</span>
                   <span class="time">4 hrs.</span>
@@ -238,7 +237,7 @@
       <div id="sidebar" class="nav-collapse ">
         <!-- sidebar menu start-->
         <ul class="sidebar-menu" id="nav-accordion">
-          <p class="centered"><a href="profile.html"><img src="static/informatica/img/ui-sam.jpg" class="img-circle" width="80"></a></p>
+          <p class="centered"><a href="profile.html"><img src="{% static 'informatica/img/ui-sam.jpg' %}" class="img-circle" width="80"></a></p>
           <h5 class="centered">Jorge Moreno</h5>
           <li class="mt">
             <a class="active" href="index.html">
@@ -306,7 +305,9 @@
       </div>
     </aside>
     <!--sidebar end-->
+    <section id="main-content">
     {% block content %}{% endblock %}
+  </section>
     <!--footer start-->
     <footer class="site-footer">
       <div class="text-center">
@@ -323,13 +324,9 @@
     </footer>
     <!--footer end-->
   </section>
-  
-  
-  
-  
+
   <!-- js placed at the end of the document so the pages load faster -->
   <script src="{% static 'informatica/lib/jquery/jquery.min.js' %}"></script>
-
   <script src="{% static 'informatica/lib/bootstrap/js/bootstrap.min.js' %}"></script>
   <script class="include" type="text/javascript" src="{% static 'informatica/lib/jquery.dcjqaccordion.2.7.js' %}"></script>
   <script src="{% static 'informatica/lib/jquery.scrollTo.min.js' %}"></script>
@@ -339,29 +336,10 @@
   <script src="{% static 'informatica/lib/common-scripts.js' %}"></script>
   <script type="text/javascript" src="{% static 'informatica/lib/gritter/js/jquery.gritter.js' %}"></script>
   <script type="text/javascript" src="{% static 'informatica/lib/gritter-conf.js' %}"></script>
+ 
   <!--script for this page-->
-  <script src="{% static 'informatica/lib/sparkline-chart.js' %}"></script>
-  <script src="{% static 'informatica/lib/zabuto_calendar.js' %}"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      var unique_id = $.gritter.add({
-        // (string | mandatory) the heading of the notification
-        title: 'Bienvenido a Cabañero!',
-        // (string | mandatory) the text inside the notification
-        text: 'Aquí podras encontrar todo lo relaccionado con tu dia a dia. Pulsa la X para cerrar esta ventana.',
-        // (string | optional) the image to display on the left
-        image: 'static/informatica/img/ui-sam.jpg',
-        // (bool | optional) if you want it to fade out on its own or just sit there
-        sticky: false,
-        // (int | optional) the time you want it to be alive for before fading out
-        time: 8000,
-        // (string | optional) the class name you want to apply to that specific message
-        class_name: 'my-sticky-class'
-      });
 
-      return false;
-    });
-  </script>
+
   <script type="application/javascript">
     $(document).ready(function() {
       $("#date-popover").popover({

@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'yk4xne21$p&qv(b_$(08k5m-9!jl=(t4m5h!#nc3_i^u^)_+ro'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1','icabanyero.pythonanyware.com']
 
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'controlpanel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,5 +122,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
-
+#STATICFILES_DIRS =(os.path.join(BASE_DIR, 'static'),)
 
