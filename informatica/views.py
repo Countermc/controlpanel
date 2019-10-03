@@ -35,3 +35,6 @@ def tareas(request):
 
 def calendario(request):
     return render(request, 'informatica/calendario.html', {'title': 'calendario'})
+
+def login(request):
+    return render(request, 'informatica/login.html', {'title': 'login'})
