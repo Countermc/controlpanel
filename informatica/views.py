@@ -1,29 +1,11 @@
 from django.shortcuts import render
+from .models import Post
 
-posts = [
-    {
-        'author': 'Juan Moreno',
-        'title': 'Problemas con el correo',
-        'content': 'No puedo mandar correos ',
-        'date_posted': 'Agosto 27, 2018'
-    },
-    {
-        'author': 'Luis',
-        'title': 'No funciona la impresora',
-        'content': 'No puedo imprimir, llevo toda la mañana reiniciandola',
-        'date_posted': 'Agosto 27, 2018'
-    },
-    {
-        'author': 'Alberto',
-        'title': 'BD hay que borrar un pvst',
-        'content': 'No me deja borrar el pvst28004, podeis borrarlo vosotros?',
-        'date_posted': 'Agosto 27, 2018'
-    }
-]
+
 
 def home(request):
     context = {
-        'posts': posts
+        'posts': Post.objects.all()
     }
     return render(request, 'informatica/home.html', context)
 
@@ -38,3 +20,6 @@ def calendario(request):
 
 def login(request):
     return render(request, 'informatica/login.html', {'title': 'login'})
+
+def incidencias(request):
+    return render(request, 'informatica/incidencias.html', {'title': 'incidencias'})

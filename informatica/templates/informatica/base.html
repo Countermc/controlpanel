@@ -136,7 +136,7 @@
                 <a href="index.html#">
                   <span class="photo"><img alt="avatar" src="{% static 'informatica/img/ui-divya.jpg' %}"></span>
                   <span class="subject">
-                  <span class="from">Rosda Forriol</span>
+                  <span class="from">Rosa Forriol</span>
                   <span class="time">40 mins.</span>
                   </span>
                   <span class="message">
@@ -185,34 +185,16 @@
               <li>
                 <p class="yellow">Tienes 7 notificaciones</p>
               </li>
+              {% for post in posts %}
               <li>
                 <a href="index.html#">
                   <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                  El servidor está sobrecargado.
-                  <span class="small italic">4 mins.</span>
+                  {{post.title}}
+                  <span class="small italic">{{post.date_posted|date:"F d, y"}}</span>
                   </a>
               </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-warning"><i class="fa fa-bell"></i></span>
-                  Puesto03 sin respuesta.
-                  <span class="small italic">30 mins.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-danger"><i class="fa fa-bolt"></i></span>
-                  Puesto06 espacio en disco 90%.
-                  <span class="small italic">2 hrs.</span>
-                  </a>
-              </li>
-              <li>
-                <a href="index.html#">
-                  <span class="label label-success"><i class="fa fa-plus"></i></span>
-                  Nuevo usuario registrado.
-                  <span class="small italic">3 hrs.</span>
-                  </a>
-              </li>
+              {% endfor %}
+
               <li>
                 <a href="index.html#">Ver todas las notificaciones</a>
               </li>
