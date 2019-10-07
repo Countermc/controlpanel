@@ -25,7 +25,7 @@ SECRET_KEY = 'yk4xne21$p&qv(b_$(08k5m-9!jl=(t4m5h!#nc3_i^u^)_+ro'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','icabanyero.pythonanyware.com']
+ALLOWED_HOSTS = ['127.0.0.1','icabanyero.pythonanyware.com', '10.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'informatica.apps.InformaticaConfig',
+    'users.apps.UsersConfig',    
     'bootstrap4',
+    'crispy_forms',
     
 ]
 
@@ -124,3 +126,8 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR,'static')
 #STATICFILES_DIRS =(os.path.join(BASE_DIR, 'static'),)
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'blog-home'
+
+LOGIN_URL = 'login'

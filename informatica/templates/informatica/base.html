@@ -288,6 +288,13 @@
     </aside>
     <!--sidebar end-->
     <section id="main-content">
+      {% if messages %}
+      {% for message in messages %}
+          <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+          </div>
+      {% endfor %}
+      {% endif %}
     {% block content %}{% endblock %}
     </section>
     <!--footer start-->
