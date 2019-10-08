@@ -13,7 +13,10 @@ def automatizacion(request):
     return render(request, 'informatica/automatizacion.html', {'title': 'Automatizacion'})
 
 def tareas(request):
-    return render(request, 'informatica/tareas.html', {'title': 'tareas'})
+    midiccionario ={
+        'posts': Post.objects.all()
+    }
+    return render(request, 'informatica/tareas.html', midiccionario)
 
 def calendario(request):
     return render(request, 'informatica/calendario.html', {'title': 'calendario'})

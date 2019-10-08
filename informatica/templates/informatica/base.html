@@ -35,14 +35,14 @@
         <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
       </div>
       <!--logo start-->
-      <a href="index.html" class="logo"><b>CABA<span>ÑERO</span></b></a>
+      <a href="" class="logo"><b>CABA<span>ÑERO</span></b></a>
       <!--logo end-->
       <div class="nav notify-row" id="top_menu">
         <!--  notification start -->
         <ul class="nav top-menu">
           <!-- settings start -->
           <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="">
               <i class="fa fa-tasks"></i>
               <span class="badge bg-theme">4</span>
               </a>
@@ -52,7 +52,7 @@
                 <p class="green">Tienes 4 tareas pendientes</p>
               </li>
               <li>
-                <a href="index.html#">
+                <a href="{% url 'informatica-home' %}">
                   <div class="task-info">
                     <div class="desc">Panel de control</div>
                     <div class="percent">40%</div>
@@ -65,7 +65,7 @@
                 </a>
               </li>
               <li>
-                <a href="index.html#">
+                <a href="{% url 'informatica-home' %}">
                   <div class="task-info">
                     <div class="desc">Base de datos Actualizada</div>
                     <div class="percent">60%</div>
@@ -78,7 +78,7 @@
                 </a>
               </li>
               <li>
-                <a href="index.html#">
+                <a href="{% url 'informatica-home' %}">
                   <div class="task-info">
                     <div class="desc">Desarrollo de Productos</div>
                     <div class="percent">80%</div>
@@ -91,7 +91,7 @@
                 </a>
               </li>
               <li>
-                <a href="index.html#">
+                <a href="{% url 'informatica-home' %}">
                   <div class="task-info">
                     <div class="desc">Resoluciones de problemas</div>
                     <div class="percent">70%</div>
@@ -111,7 +111,7 @@
           <!-- settings end -->
           <!-- inbox dropdown start-->
           <li id="header_inbox_bar" class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="index.html#">
+            <a data-toggle="dropdown" class="dropdown-toggle" href="{% url 'informatica-home' %}">
               <i class="fa fa-envelope-o"></i>
               <span class="badge bg-theme">5</span>
               </a>
@@ -121,7 +121,7 @@
                 <p class="green">Tienes 5 nuevos mensajes</p>
               </li>
               <li>
-                <a href="index.html#">
+                <a href="{% url 'informatica-home' %}">
                   <span class="photo"><img alt="avatar" src="{% static 'informatica/img/ui-zac.jpg' %}"></span>
                   <span class="subject">
                   <span class="from">Zac Snider</span>
@@ -196,7 +196,7 @@
               {% endfor %}
 
               <li>
-                <a href="index.html#">Ver todas las notificaciones</a>
+                <a href="/tareas/">Ver todas las notificaciones</a>
               </li>
             </ul>
           </li>
@@ -222,7 +222,7 @@
           <p class="centered"><a href="profile.html"><img src="{% static 'informatica/img/ui-sam.jpg' %}" class="img-circle" width="80"></a></p>
           <h5 class="centered">Jorge Moreno</h5>
           <li class="mt">
-            <a class="active" href="index.html">
+            <a class="active" href="{% url 'informatica-home' %}">
               <i class="fa fa-dashboard"></i>
               <span>Dashboard</span>
               </a>
