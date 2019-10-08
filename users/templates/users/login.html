@@ -1,5 +1,5 @@
 {% load static %}
-{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,9 +38,9 @@
   <div id="login-page">
     <div class="container">
       <form method="POST" class="form-login" action="home.html">
-          {% csrf_token %}
+          
         <h2 class="form-login-heading">sign in now</h2>
-        {{ form|crispy }}
+        
         <div class="login-wrap">
           <input type="text" class="form-control" placeholder="User ID" autofocus>
           <br>

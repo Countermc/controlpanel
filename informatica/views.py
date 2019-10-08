@@ -26,3 +26,5 @@ def login(request):
 
 def incidencias(request):
     return render(request, 'informatica/incidencias.html', {'title': 'incidencias'})
+
+
